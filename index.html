@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanzzOfficial</title>
+    <link rel="icon" href="https://telegra.ph/file/e71d7cf0eee762b466ae6.jpg" type="image/x-icon">
+    <style>
+        :root {
+            --color-bg: #0a192f;
+            --color-text: #e6f1ff;
+            --color-primary: #64ffda;
+            --color-secondary: #ffd700;
+            --color-tertiary: #ff6b6b;
+            --color-surface: #112240;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+        header {
+            background-color: var(--color-surface);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: var(--color-primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+      .hero.hero {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://telegra.ph/file/375281195e05c820fa221.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 0;
+            color: var(--color-text);
+            }
+        }
+        footer a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: var(--color-secondary);
+        }
+        .product-section {
+            margin-top: 4rem;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product {
+            background-color: var(--color-surface);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product h3 {
+            color: var(--color-primary);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .product p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .product .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+        .about-section, .contact-section {
+            margin-top: 4rem;
+            background-color: var(--color-surface);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-primary);
+        }
+        footer {
+            background-color: var(--color-surface);
+            color: var(--color-text);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-item a {
+            color: var(--color-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .contact-item a:hover {
+            color: var(--color-primary);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-text);
+        }
+        .social-icon:hover {
+            fill: var(--color-primary);
+        }
+        .hero {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://telegra.ph/file/375281195e05c820fa221.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 100px 0;
+            color: var(--color-text);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                background-size: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://telegra.ph/file/e71d7cf0eee762b466ae6.jpg" alt="DanzzOfficial Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#products">products</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>DanzzOfficial</h1>
+            <p>discover top-quality products at unbeatable prices!</p>
+            <a href="#products" class="cta-button">shop now</a>
+        </div>
+    </div>
+
+    <main class="container">
+   <section id="products" class="product-section">
+    <h2>DOMAIN PRODUK</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>Domain My.id</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.20.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Biz Id</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.20.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Xyz</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.30.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Online</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.25.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Site</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.25.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Store</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.55.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Domain Website</h3>
+            <p>1 Tahun</p>
+            <p class="price">Rp.40.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Script Subdomain</h3>
+            <p>80 Domain</p>
+            <p class="price">Rp.20.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>API Domain</h3>
+            <p>2 API</p>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+    </div>
+
+    <h2>PANEL PTRERODACTYL PUBLIK SERVER</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>1GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.1.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>2GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.2.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>3GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.3.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>4GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.4.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>5GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>6GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.6.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>7GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.7.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>8GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.8.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>9GB Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.9.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Unli Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.10.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+    </div>
+
+    <h2>PANEL PTRERODACTYL PRIVATE SERVER</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>1GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.2.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>2GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.3.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>3GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.4.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>4GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>5GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.6.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>6GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.7.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>7GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.8.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>8GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.9.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>9GB Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.10.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Unli Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.11.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+    </div>
+
+    <h2>PRODUK PANEL PTRERODACTYL LAINNYA</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>Resseler Publik</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.10.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Resseler Publik</h3>
+            <p>Permanent</p>
+            <p class="price">Rp.15.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Resseler Privat</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.15.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Resseler Privat</h3>
+            <p>Permanent</p>
+            <p class="price">Rp.20.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Admin Panel</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.15.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Pt Panel</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.30.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Own Panel</h3>
+            <p>Per Bulan</p>
+            <p class="price">Rp.30.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+    </div>
+
+    <h2>VPS DIGITAL OCEAN</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>RAM 2 Core 1</h3>
+            <p>Free Install Panel, Wings & Egg, Free Domain, Masa Aktif 1 Bulan, Garansi 15 Hari</p>
+            <p class="price">Rp.20.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>RAM 4 Core 2</h3>
+            <p>Free Install Panel, Wings & Egg, Free Domain, Masa Aktif 1 Bulan, Garansi 15 Hari</p>
+            <p class="price">Rp.30.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>RAM 8 Core 4</h3>
+            <p>Free Install Panel, Wings & Egg, Free Domain, Masa Aktif 1 Bulan, Garansi 15 Hari</p>
+            <p class="price">Rp.50.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>RAM 16 Core 4</h3>
+            <p>Free Install Panel, Wings & Egg, Free Domain, Masa Aktif 1 Bulan, Garansi 15 Hari</p>
+            <p class="price">Rp.70.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+    </div>
+
+    <h2>JASA KELILING</h2>
+    <div class="product-grid">
+        <div class="product">
+            <h3>Jasa Install Panel</h3>
+            <p>Per Install</p>
+            <p class="price">Rp.10.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Jasa Install Node & Wings</h3>
+            <p>Per Install</p>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Jasa Rename Script</h3>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Jasa Fix Script Error</h3>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+        </div>
+        <div class="product">
+            <h3>Jasa Tambah fitur script</h3>
+            <p>Per fitur</p>
+            <p class="price">Rp.5.000</p>
+            <a href="https://wa.me/message/2RMBH2EX7CC6I1" class="cta-button">buy</a>
+    </div>
+</section>
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We offer high-quality hosting products for WhatsApp bots to meet your daily needs. Our commitment is to provide reliable and efficient solutions for all your hosting requirements.</p>
+            <p>For more information about our products, please <a href="https://wa.me/6285649661404">contact us</a>.</p>
+        </section>
+
+<section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="mailto:DanzzOfficialv1@gmail.com">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>DanzzOfficialv1@gmail.com</span>
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://wa.me/6285649661404">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>+62 856-4966-1404</span>
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.google.com/maps/search/?api=1&query=Kec.+Kanigoro,+Kabupaten+Blitar,+Jawa+Timur,+Indonesia" target="_blank">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Kec. Kanigoro, Kabupaten Blitar, Jawa Timur, Indonesia</span>
+                </a>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danz.v1/" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 DanzzOfficial. All rights reserved.</p>
+   <p><a href="https://www.tiktok.com/@flow.falcon" target="_blank">©FlowFalcon 2024</a></p>
+</footer>
+</body>
+</html>
